@@ -22,7 +22,7 @@ app.post(
     check("sender").normalizeEmail().isEmail(),
     check("target").normalizeEmail().isEmail(),
     check("note").not().isEmpty(),
-    check("senderName").not().isEmpty(),
+    check("name").not().isEmpty(),
     check("app").not().isEmpty(),
   ],
   async (req, res) => {
