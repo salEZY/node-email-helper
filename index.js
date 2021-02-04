@@ -6,7 +6,7 @@ const { check, validationResult } = require("express-validator");
 
 const { sendEmail } = require("./mail");
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.json({ extended: false }));
