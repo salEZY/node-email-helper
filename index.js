@@ -13,7 +13,7 @@ app.use(express.json({ extended: false }));
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to MailerApp");
+  res.send("Welcome to Node Emailer Helper API");
 });
 
 app.post(
@@ -34,14 +34,14 @@ app.post(
         .json({ message: "Invalid inputs passed, please check your data" });
     }
 
-    const { sender, target, note, senderName, app } = req.body;
+    const { sender, target, note, name, app } = req.body;
     try {
-      await sendEmail(sender, target, "message", note, senderName, app);
+      await sendEmail(sender, target, "message", note, name, app);
     } catch (err) {
       console.error(err);
       return res.status(500).json({ error: err });
     }
-    res.json({ 0: "Poruka je poslata!", 1: "Message was sent!" });
+    res.json({ sr: "Poruka je poslata!", en: "Message was sent!" });
   }
 );
 
