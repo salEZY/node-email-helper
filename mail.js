@@ -22,7 +22,7 @@ const createMailOptions = (sender, target, type, info, name, app) => {
       return {
         ...mailOptions,
         subject: "Poruka ✔",
-        html: `<div style="width: 80%;margin: 0 auto;border: 2px solid #26466d; border-radius: 5px 25px 5px 5px;"><h2 style="color: #26466d;">${app}</h2><p><b>Ime pošaljioca:</b> ${name}</p><p><b>E-mail pošaljioca:</b> <a href="mailto:${sender}">${sender}</a></p><p style="width: 75%;text-align: justify;"><b>Poruka:</b> ${info}</p></div>`,
+        html: `<div style="width: 80%;margin: 0 auto;padding: 1rem;text-align: center; border: 2px solid #26466d; border-radius: 5px 25px 5px 5px;"><h2 style="color: #26466d;">${app}</h2><p><b>Ime pošaljioca:</b> ${name}</p><p><b>E-mail pošaljioca:</b> <a href="mailto:${sender}">${sender}</a></p><p style="width: 75%;text-align: justify;"><b>Poruka:</b> ${info}</p></div>`,
       };
     default:
       return null;
