@@ -20,7 +20,6 @@ app.post(
   "/",
   [
     check("sender").normalizeEmail().isEmail(),
-    check("target").normalizeEmail().isEmail(),
     check("note").not().isEmpty(),
     check("name").not().isEmpty(),
     check("app").not().isEmpty(),
@@ -34,9 +33,16 @@ app.post(
         .json({ message: "Invalid inputs passed, please check your data" });
     }
 
-    const { sender, target, note, name, app } = req.body;
+    const { sender, note, name, app } = req.body;
     try {
-      await sendEmail(sender, target, "message", note, name, app);
+      await sendEmail(
+        sender,
+        "lawofficemilic@gmail.com",
+        "message",
+        note,
+        name,
+        app
+      );
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: err });
