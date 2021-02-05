@@ -37,7 +37,7 @@ app.post(
     try {
       await sendEmail(
         sender,
-        "bobicaleks@yahoo.com",
+        "milicamilic231@gmail.com",
         "message",
         note,
         name,
