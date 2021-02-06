@@ -21,8 +21,16 @@ const createMailOptions = (sender, target, type, info, name, app) => {
     case "message":
       return {
         ...mailOptions,
-        subject: "Poruka ✔",
-        html: `<div style="margin: 20px auto; background: white;"><div style="background-color: #f1f1f1;width: 80%;height: 85%;margin: 10px auto;text-align: center; border: 3px solid #26466d; border-radius: 5px 25px 5px 5px;padding: 15px;background: white;"><h3 style="color: #26466d;font-style: italic;">${app}</h3><hr><p><b>Pošaljilac:</b> ${name}</p><p><b>E-mail pošaljioca:</b> <a href="mailto:${sender}" style="color: #f5b51a;font-weight: bold;">${sender}</a></p><hr><p style="width: 60%;margin: 15px auto;"><b>Poruka:</b> ${info}</p></div></div>`,
+        subject: "Poruka §",
+        //html: `<div style="margin: 20px auto; background: white;"><div style="background-color: #f1f1f1;width: 80%;height: 85%;margin: 10px auto;text-align: center; border: 3px solid #26466d; border-radius: 5px 25px 5px 5px;padding: 15px;background: white;"><h3 style="color: #26466d;font-style: italic;">${app}</h3><hr><p><b>Pošaljilac:</b> ${name}</p><p><b>E-mail pošaljioca:</b> <a href="mailto:${sender}" style="color: #f5b51a;font-weight: bold;">${sender}</a></p><hr><p style="width: 60%;margin: 15px auto;"><b>Poruka:</b> ${info}</p></div></div>`,
+        text: `
+Poslato sa miliclaw.com
+
+Pošaljilac: ${name}
+E-mail pošaljioca: ${sender}
+Poruka:
+
+${info}`,
       };
     default:
       return null;
